@@ -1,0 +1,21 @@
+comment: file 16
+dataset:
+  log_file: data/splited data/18-128x1024/Linux_16.txt
+exp_dir: result
+exp_name: result_2024-09-08_19-01-18_file 16
+exp_time: 2024-09-08_19-01-18
+inference:
+  chunk_size: null
+  save_path: result
+model:
+  LOCATION: asia-east1
+  MODEL_NAME: gemini-1.5-pro
+  PROJECT_ID: log-analysis-433902
+  temperature: 0.2
+  top_p: 0.8
+run_id: '50044'
+save_dir: result\result_2024-09-08_19-01-18_file 16
+test:
+  human_result_file: data/splited data/18-128x1024/new_result_huaman_Linux_16.json
+  llm_result_file: null
+  re_result_file: data/splited data/18-128x1024/new_result_huaman_Linux_16.json

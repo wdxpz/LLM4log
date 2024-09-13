@@ -1,0 +1,22 @@
+comment: all file 192k-12 count test
+dataset:
+  log_file: data/Linux.txt
+exp_dir: result
+exp_name: result_2024-09-12_02-26-46_all file 192k-12 count test
+exp_time: 2024-09-12_02-26-46
+inference:
+  chunk_size: 192*1024
+  count: true
+  save_path: result
+model:
+  LOCATION: asia-east1
+  MODEL_NAME: gemini-1.5-pro
+  PROJECT_ID: log-analysis-433902
+  temperature: 0.2
+  top_p: 0.8
+run_id: '32528'
+save_dir: result\result_2024-09-12_02-26-46_all file 192k-12 count test
+test:
+  human_result_file: data/count_human_evaluation.json
+  llm_result_file: result/result_2024-09-10_16-42-58_all file 192k-12/inference_output/merged_output.json
+  re_result_file: data/count_result-re_Linux.json

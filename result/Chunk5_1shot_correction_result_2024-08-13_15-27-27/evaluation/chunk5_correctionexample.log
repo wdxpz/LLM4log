@@ -1,0 +1,48 @@
+2024-08-28 15:07:32.535 | INFO     | __main__:evaluate_result_test:247 - Running in test mode
+2024-08-28 15:07:32.535 | INFO     | __main__:evaluate_result_test:248 - loading results
+2024-08-28 15:07:32.535 | INFO     | __main__:evaluate_result_test:249 - llm_result_file: result/result_2024-08-20_09-58-22/merged_output.json
+2024-08-28 15:07:32.536 | INFO     | __main__:evaluate_result_test:250 - re_result_file: result/re_results/result-re.json
+2024-08-28 15:07:32.536 | INFO     | __main__:evaluate_result_test:251 - human_result_file: data/human_evalution.json
+2024-08-28 15:07:58.288 | INFO     | __main__:evaluate_result_test:247 - Running in test mode
+2024-08-28 15:07:58.288 | INFO     | __main__:evaluate_result_test:248 - loading results
+2024-08-28 15:07:58.289 | INFO     | __main__:evaluate_result_test:249 - llm_result_file: result/result_2024-08-13_15-27-27/merged_output.json
+2024-08-28 15:07:58.289 | INFO     | __main__:evaluate_result_test:250 - re_result_file: result/re_results/result-re.json
+2024-08-28 15:07:58.290 | INFO     | __main__:evaluate_result_test:251 - human_result_file: data/human_evalution.json
+2024-08-28 15:08:22.809 | INFO     | __main__:evaluate_result_test:247 - Running in test mode
+2024-08-28 15:08:22.810 | INFO     | __main__:evaluate_result_test:248 - loading results
+2024-08-28 15:08:22.810 | INFO     | __main__:evaluate_result_test:249 - llm_result_file: result/result_2024-08-13_15-27-27/merged_output.json
+2024-08-28 15:08:22.812 | INFO     | __main__:evaluate_result_test:250 - re_result_file: result/re_results/result-re.json
+2024-08-28 15:08:22.813 | INFO     | __main__:evaluate_result_test:251 - human_result_file: result/human_evaluation.json
+2024-08-28 15:08:22.815 | INFO     | __main__:evaluate_result_test:256 - human resut as standard
+2024-08-28 15:08:22.815 | INFO     | __main__:evaluate_result_test:257 - num of ip in human result:352
+2024-08-28 15:08:22.816 | INFO     | __main__:evaluate_result_test:258 - num of url in human result:241
+2024-08-28 15:08:22.816 | INFO     | __main__:evaluate_result_test:259 - num of ip in llm result:396
+2024-08-28 15:08:22.817 | INFO     | __main__:evaluate_result_test:260 - num of url in llm result:199
+2024-08-28 15:08:22.817 | INFO     | __main__:evaluate_result_test:263 - --------------------------------------------------------------------------------
+2024-08-28 15:08:22.818 | INFO     | __main__:evaluate_result_test:269 - miss case between llm and human:57,55
+2024-08-28 15:08:22.820 | INFO     | __main__:evaluate_result_test:278 - miss case between llm and re:62,75
+2024-08-28 15:08:22.821 | INFO     | __main__:evaluate_result_test:289 - miss case between re and human:0,7
+2024-08-28 15:08:22.821 | INFO     | __main__:evaluate_result_test:294 - --------------------------------------------------------------------------------
+2024-08-28 15:08:22.822 | INFO     | __main__:evaluate_result_test:297 - exchange missed classify url and ip for result of llm to get pure llm result
+2024-08-28 15:08:22.822 | INFO     | __main__:pure_llm:68 - nums of URL in IP:94
+2024-08-28 15:08:22.822 | INFO     | __main__:pure_llm:70 - nums of IP in URL:11
+2024-08-28 15:08:22.823 | INFO     | __main__:pure_llm:73 - nums of pure IP:302
+2024-08-28 15:08:22.823 | INFO     | __main__:pure_llm:74 - nums of pure URL:188
+2024-08-28 15:08:22.823 | INFO     | __main__:pure_llm:77 - nums of pure IP after exchange:305
+2024-08-28 15:08:22.824 | INFO     | __main__:pure_llm:78 - nums of pure URL after exchange:219
+2024-08-28 15:08:22.826 | INFO     | __main__:evaluate_result_test:303 - num of ip in pure_llm_result:305
+2024-08-28 15:08:22.826 | INFO     | __main__:evaluate_result_test:306 - num of url in pure_llm_result:219
+2024-08-28 15:08:22.827 | INFO     | __main__:evaluate_result_test:309 - --------------------------------------------------------------------------------
+2024-08-28 15:08:22.828 | INFO     | __main__:evaluate_result_test:316 - miss case between pure_llm and human:54,24
+2024-08-28 15:08:22.830 | INFO     | __main__:evaluate_result_test:327 - miss case between pure_llm and re:59,44
+2024-08-28 15:08:22.832 | INFO     | __main__:evaluate_result_test:338 - miss case between re and human: 0,7
+2024-08-28 15:08:22.832 | INFO     | __main__:evaluate_result_test:344 - --------------------------------------------------------------------------------
+2024-08-28 15:08:22.834 | INFO     | __main__:evaluate_result_test:350 - bad case between llm and human:101,13
+2024-08-28 15:08:22.835 | INFO     | __main__:evaluate_result_test:361 - bad case between pure_llm and human:7,2
+2024-08-28 15:08:22.836 | INFO     | __main__:evaluate_result_test:366 - --------------------------------------------------------------------------------
+2024-08-28 15:08:22.836 | INFO     | __main__:evaluate_result_test:369 - recall of llm(0.8380681818181818, 0.7717842323651453)
+2024-08-28 15:08:22.837 | INFO     | __main__:evaluate_result_test:370 - recall of pure_llm(0.8465909090909091, 0.9004149377593361)
+2024-08-28 15:08:22.837 | INFO     | __main__:evaluate_result_test:373 - recall of re(1.0, 0.970954356846473)
+2024-08-28 15:08:22.837 | INFO     | __main__:evaluate_result_test:375 - precision of llm(0.7449494949494949, 0.9346733668341709)
+2024-08-28 15:08:22.838 | INFO     | __main__:evaluate_result_test:378 - precision of pure_llm(0.9770491803278688, 0.9908675799086758)
+2024-08-28 15:08:22.838 | INFO     | __main__:evaluate_result_test:383 - precision of re(0.9777777777777777, 0.9105058365758755)

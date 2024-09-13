@@ -1,0 +1,43 @@
+2024-09-10 01:35:52.756 | INFO     | __main__:main:42 - Log file created at: result\result_2024-09-10_01-35-52_file 3 eval\log_2024-09-10_01-35-52_65564.txt
+2024-09-10 01:35:52.757 | INFO     | __main__:main:43 - experiment comment:None
+2024-09-10 01:35:52.757 | INFO     | __main__:main:49 - RUN_ID: 65564
+2024-09-10 01:35:52.758 | INFO     | utils.eval_util:evaluate_result:183 - Running in test mode
+2024-09-10 01:35:52.758 | INFO     | utils.eval_util:evaluate_result:184 - loading results
+2024-09-10 01:35:52.758 | INFO     | utils.eval_util:evaluate_result:188 - llm_result_file: result/128k-18-result/output3.json
+2024-09-10 01:35:52.759 | INFO     | utils.eval_util:evaluate_result:189 - re_result_file: data/splited data/18-128x1024/new_result_huaman_Linux_3.json
+2024-09-10 01:35:52.759 | INFO     | utils.eval_util:evaluate_result:190 - human_result_file: data/splited data/18-128x1024/new_result_huaman_Linux_3.json
+2024-09-10 01:35:52.762 | INFO     | utils.eval_util:evaluate_result:195 - human resut as standard
+2024-09-10 01:35:52.762 | INFO     | utils.eval_util:evaluate_result:197 - num of ip in human result:41
+2024-09-10 01:35:52.762 | INFO     | utils.eval_util:evaluate_result:198 - num of url in human result:20
+2024-09-10 01:35:52.763 | INFO     | utils.eval_util:evaluate_result:199 - num of ip in llm result:30
+2024-09-10 01:35:52.763 | INFO     | utils.eval_util:evaluate_result:200 - num of url in llm result:19
+2024-09-10 01:35:52.763 | INFO     | utils.eval_util:evaluate_result:203 - --------------------------------------------------------------------------------
+2024-09-10 01:35:52.765 | INFO     | utils.eval_util:evaluate_result:209 - miss case between llm and human:12,1
+2024-09-10 01:35:52.767 | INFO     | utils.eval_util:evaluate_result:218 - miss case between llm and re:12,1
+2024-09-10 01:35:52.768 | INFO     | utils.eval_util:evaluate_result:228 - miss case between re and human:0,0
+2024-09-10 01:35:52.768 | INFO     | utils.eval_util:evaluate_result:233 - --------------------------------------------------------------------------------
+2024-09-10 01:35:52.768 | INFO     | utils.eval_util:evaluate_result:236 - exchange missed classify url and ip for result of llm to get pure llm result
+2024-09-10 01:35:52.769 | INFO     | utils.eval_util:pure_llm:95 - nums of URL in IP:0
+2024-09-10 01:35:52.769 | INFO     | utils.eval_util:pure_llm:97 - nums of IP in URL:1
+2024-09-10 01:35:52.770 | INFO     | utils.eval_util:pure_llm:101 - nums of pure IP:30
+2024-09-10 01:35:52.770 | INFO     | utils.eval_util:pure_llm:102 - nums of pure URL:19
+2024-09-10 01:35:52.771 | INFO     | utils.eval_util:evaluate_result:244 - num of ip in pure_llm_result:30
+2024-09-10 01:35:52.771 | INFO     | utils.eval_util:evaluate_result:245 - num of url in pure_llm_result:19
+2024-09-10 01:35:52.772 | INFO     | utils.eval_util:evaluate_result:246 - --------------------------------------------------------------------------------
+2024-09-10 01:35:52.773 | INFO     | utils.eval_util:evaluate_result:253 - miss case between pure_llm and human:12,1
+2024-09-10 01:35:52.774 | INFO     | utils.eval_util:evaluate_result:264 - miss case between pure_llm and re:12,1
+2024-09-10 01:35:52.775 | INFO     | utils.eval_util:evaluate_result:274 - miss case between re and human: 0,0
+2024-09-10 01:35:52.775 | INFO     | utils.eval_util:evaluate_result:280 - --------------------------------------------------------------------------------
+2024-09-10 01:35:52.776 | INFO     | utils.eval_util:evaluate_result:286 - bad case between llm and human:1,0
+2024-09-10 01:35:52.777 | INFO     | utils.eval_util:evaluate_result:297 - bad case between pure_llm and human:1,0
+2024-09-10 01:35:52.778 | INFO     | utils.eval_util:evaluate_result:302 - --------------------------------------------------------------------------------
+2024-09-10 01:35:52.778 | INFO     | utils.eval_util:evaluate_result:305 - recall of llm(0.7073170731707317, 0.95)
+2024-09-10 01:35:52.778 | INFO     | utils.eval_util:evaluate_result:306 - recall of pure_llm(0.7073170731707317, 0.95)
+2024-09-10 01:35:52.779 | INFO     | utils.eval_util:evaluate_result:309 - recall of re(1.0, 1.0)
+2024-09-10 01:35:52.779 | INFO     | utils.eval_util:evaluate_result:311 - precision of llm(0.9666666666666667, 1.0)
+2024-09-10 01:35:52.780 | INFO     | utils.eval_util:evaluate_result:312 - precision of pure_llm(0.9666666666666667, 1.0)
+2024-09-10 01:35:52.780 | INFO     | utils.eval_util:evaluate_result:315 - precision of re(1.0, 1.0)
+2024-09-10 01:35:52.780 | INFO     | utils.eval_util:evaluate_result:318 - --------------------------------------------------------------------------------
+2024-09-10 01:35:52.781 | INFO     | utils.eval_util:evaluate_result:320 - num of wrong count IP and url of llm: 17,13
+2024-09-10 01:35:52.783 | INFO     | utils.eval_util:evaluate_result:331 - wrong_count_ip_rate:0.5666666666666667
+2024-09-10 01:35:52.783 | INFO     | utils.eval_util:evaluate_result:332 - whole wrong_rate:0.6

@@ -1,0 +1,104 @@
+2024-08-20 09:58:22.442 | INFO     | __main__:vertexai_init:68 - initial the model
+2024-08-20 09:58:22.442 | INFO     | __main__:vertexai_init:69 - Project ID: log-extraction
+2024-08-20 09:58:22.442 | INFO     | __main__:vertexai_init:70 - Location: asia-east1
+2024-08-20 09:58:22.442 | INFO     | __main__:vertexai_init:71 - Model Name: gemini-1.5-pro
+2024-08-20 09:58:22.442 | INFO     | __main__:vertexai_init:77 - Model system_instrcution ['you are a network specilist and informaticien.', 'your job is to extract all the text value of the following entities: {URL(domain)}, {IP}, {compuation resources} from a log file.', 'the contents must only include text strings found in the document.', 'each contents only appear in response one time. Please list them in different catagories.', 'the resulst should be in JSON format verified the response schema.', 'please distince the ip and urls, ips are all numbers and dots, and urls are strings,numbers and dots.', 'please find all the ip and url from the log file', 'don not make up IP and URL, they are real values from the log file.']
+2024-08-20 09:58:22.458 | INFO     | __main__:<module>:397 - prompt: right example 1:
+input text:
+Aug  3 06:20:35 combo ftpd[28839]: connection from 211.107.232.1 () at Wed Aug  3 06:20:35 2005 
+output：
+{
+    "IP": ["211.107.232.1"],
+    "URL": []
+    "memory": []
+}
+reasoning:
+This is a right example because 211.107.232.1 is an IP address, and there is no URL and memory mentioned in the input text.
+---
+right example 2:
+input text:
+Aug  4 07:00:29 combo sshd(pam_unix)[31672]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=arx58.internetdsl.tpnet.pl 
+output：
+{
+    "IP": [],
+    "URL": ["arx58.internetdsl.tpnet.pl"]
+    "memory": []
+}
+reasoning:
+This is a right example because arx58.internetdsl.tpnet.pl is an url, and there is no IP and memory mentioned in the input text.
+---
+right example 3:
+input text:
+Aug  7 06:52:07 combo ftpd[16258]: connection from 82.53.83.190 (host190-83.pool8253.interbusiness.it) at Sun Aug  7 06:52:07 2005 
+output：
+{
+    "IP": ["82.53.83.190"],
+    "URL": ["host190-83.pool8253.interbusiness.it"]
+    "memory": []
+}
+reasoning:
+This is a right example because 82.53.83.190 is an IP address, and host190-83.pool8253.interbusiness.it is an URL. There is no memory mentioned in the input text.
+---
+wrong example 1:
+input text:
+Jan  9 17:35:55 combo ftpd[6505]: connection from 60.45.101.89 (p15025-ipadfx01yosida.nagano.ocn.ne.jp) at Mon Jan  9 17:35:55 2006
+output：
+{
+    "IP": ["60.45.101.89","p15025-ipadfx01yosida.nagano.ocn.ne.jp"],
+    "URL": []
+    "memory": []
+}
+reasoning: this is a wrong example because 60.45.101.89 is an IP address and p15025-ipadfx01yosida.nagano.ocn.ne.jp is an URL
+---
+wrong example 2:
+input text:
+Jul  9 22:53:19 combo ftpd[24085]: connection from 206.196.21.129 (host129.206.196.21.maximumasp.com) at Sat Jul  9 22:53:19 2005  
+output：
+{
+    "IP": [],
+    "URL": ["206.196.21.129 (host129.206.196.21.maximumasp.com)"],
+    "memory": []
+}
+reasoning: this is a wrong example because 206.196.21.129 is a IP and host129.206.196.21.maximumasp.com is a URL.
+---
+wrong example 3:
+input text:
+Jul  9 22:53:22 combo ftpd[24073]: connection from 206.196.21.129 (host129.206.196.21.maximumasp.com) at Sat Jul  9 22:53:22 2005 
+Jul 10 03:55:15 combo ftpd[24513]: connection from 217.187.83.139 () at Sun Jul 10 03:55:15 2005 
+output：
+{
+    "IP": ["206.196.21.129"],
+    "URL": ["host129.206.196.21.maximumasp.com"],
+    "memory: []
+}
+reasoning: this is a wrong example because 217.187.83.139 is also an IP
+---
+wrong example 4:
+input text:
+Oct  1 06:50:49 combo sshd(pam_unix)[12386]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=llekm-static-203.200.147.8.vsnl.net.in
+output：
+{
+    "IP": ["203.200.147.8"],
+    "URL": [],
+    "memory": []
+}
+reasoning: this is a wrong example because 203.200.147.8 is a part of url llekm-static-203.200.147.8.vsnl.net.in, it should not be seperated as an IP
+---
+wrong example 5:
+input text:
+Nov 12 12:21:24 combo ftpd[32401]: connection from 64.27.5.9 (merton.whererwerunning.com) at Sat Nov 12 12:21:24 2005 
+output：
+{
+    "IP": ["64.27.5.9"],
+    "URL": ["merton.whererwerunning.com","whererwerunning.com"],
+    "memory": []
+}
+reasoning: this is a wrong example because whererwerunning.com is a part of url merton.whererwerunning.com, it should not be seperated.
+-------
+please extract all the IP, URL and memory from the input log file:
+2024-08-20 09:58:22.465 | INFO     | utils.utiles:file_chunks:66 - with chunk size 517.6 KB, split file into 5 chunks.
+2024-08-20 10:00:45.346 | INFO     | __main__:write_response:56 - Generated response in result/result_2024-08-20_09-58-22\output0.json
+2024-08-20 10:04:44.875 | INFO     | __main__:write_response:56 - Generated response in result/result_2024-08-20_09-58-22\output1.json
+2024-08-20 10:05:15.300 | INFO     | __main__:write_response:56 - Generated response in result/result_2024-08-20_09-58-22\output2.json
+2024-08-20 10:07:05.365 | INFO     | __main__:write_response:56 - Generated response in result/result_2024-08-20_09-58-22\output3.json
+2024-08-20 10:08:58.419 | INFO     | __main__:write_response:56 - Generated response in result/result_2024-08-20_09-58-22\output4.json
