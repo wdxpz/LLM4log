@@ -28,7 +28,3 @@ print("RHOST:", rhost)
 
 
 
-ip_pattern = r'\b(?:\d{1,3}\.){3}\d{1,3}\b'
-for i in llm_url_list:
-    if re.match(ip_pattern, i):
-        ip_in_url.append(i)

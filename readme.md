@@ -40,9 +40,16 @@ gcloud config set project `PROJECT ID`
 
 The use of api need specific the project in the google cloud account.
 
-Due to the network problem, sometimes google service is not stable, run `test-vertextapi-connection.py` to test the connection of vertextai api(default model is Gemini-1.5-flash). If there is no problem of connection, and experiment get no response, the request may limited by the [quota](https://console.cloud.google.com/apis/api/aiplatform.googleapis.com/quotas)
+## test running
 
-(filte for model Gemini-1.5-pro)).
+Due to the network problem, sometimes google service is not stable, run `test-vertextapi-connection.py` to test the connection of vertextai api(default model is Gemini-1.5-flash). 
+
+```bash
+python test-vertexapi-connection.py
+```
+
+If there is no problem of connection, and experiment get no response, the request may limited by the [quota](https://console.cloud.google.com/apis/api/aiplatform.googleapis.com/quotas) (filte for model Gemini-1.5-pro)).
+
 
 ## vertext ai api setting
 
@@ -97,7 +104,6 @@ this will extract the IP, URL, computational consomation and evaluate, the misse
 * `-m` comments for experiment
 * `-l` logger print level
 
-
 # model parameters and prompt consturction
 
 model parameters and prompts are stored in `prompt.py`/`prompt_test.py`
@@ -109,8 +115,7 @@ in dict `parameters`
 * `temperature` : control the diversity of out put token, smaller for less diversity, $\frac{e^\frac{x_{i}}{T}}{\sum\limits_{j=1}^{V}e^{\frac{x^{j}}{T}}}$
 * `top-p`: generature tokens from the given probability range(0.8 means chose token from total probability of 0.8 )
 
-
-## prompt 
+## prompt
 
 prompt are constructed with 4 parts:
 
@@ -120,7 +125,6 @@ prompt are constructed with 4 parts:
 - `reponse_schema`: json schema to control the output in json format
 
 system instruction are used in initing the model but seems the same when we move it into context
-
 
 ## safty config
 
@@ -182,8 +186,7 @@ safety_config = {
 
 ### instruction
 
-
-> You are a network specilist and informaticien. 
+> You are a network specilist and informaticien.
 >
 > Your job is to extract all the text value of the following entities: {URL(domain)}, {IP}, {compuation resources} from a log file.
 
@@ -191,11 +194,11 @@ Role play and Task description
 
 > The contents must only include text strings found in the document.
 >
-> Each contents only appear in response one time. 
+> Each contents only appear in response one time.
 >
 > Please list them in different catagories.
 
-Reduce Hallucination, LLM sometimes make up data. 
+Reduce Hallucination, LLM sometimes make up data.
 
 Reduce repeat, sometimes LLM repeat several tokens(fall into cycle).
 
@@ -207,7 +210,7 @@ Reduce misclassification of IP and URL.
 
 verify the json schema and telling the specific rules to reduce misclassification
 
-> Please find all the ip and url from the log file. 
+> Please find all the ip and url from the log file.
 >
 > Don not make up IP and URL, they are real values from the log file.
 
@@ -362,6 +365,5 @@ output:
 }
 reasoning: this is a wrong example because 211.107.232.1 appear 5 times but extract 3 times
 ```
-
 
 some wrong examples are added for correct the bad case in experiment.
