@@ -14,12 +14,11 @@ from loguru import logger
 from utils.utiles import (
     file_chunks,
     merge_json_files,
-)  # , split_file_size   , read_log_file
+)
 
 
-# if using proxy, uncomment below lines and set proxy address
-# os.environ['HTTP_PROXY'] = 'http://127.0.0.1:10809'
-# os.environ['HTTPs_PROXY'] = 'http://127.0.0.1:10809'
+
+
 
 
 def get_response(

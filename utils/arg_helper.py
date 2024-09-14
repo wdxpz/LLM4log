@@ -7,15 +7,23 @@ from easydict import EasyDict as edict
 
 def parse_arguments():
     parser = argparse.ArgumentParser(
-        description="Running Experiments of Deep Prediction"
+        description="Log Analysis by LLM"
     )
     parser.add_argument(
         "-c",
         "--config_file",
         type=str,
         default="config/config.yaml",
-        required=True,
-        help="chose the Path of config file",
+        required=False,
+        help="the Path of config file",
+    )
+    parser.add_argument(
+        "-l",
+        "--llm",
+        type=str,
+        default="gemini",
+        required=False,
+        help="choose the LLM model",
     )
     parser.add_argument(
         "-l",
@@ -31,9 +39,7 @@ def parse_arguments():
     )
     parser.add_argument("-m", "--comment", help="Experiment comment")
     parser.add_argument("-t", "--test", help="run on Test model", action="store_true")
-    parser.add_argument(
-        "-i", "--inference", help="inference model", action="store_true"
-    )
+    parser.add_argument("-i", "--inference", help="inference model", action="store_true")
     args = parser.parse_args()
 
     return args
