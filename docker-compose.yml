@@ -1,0 +1,11 @@
+#version: '3.8'
+#version: '3.3'
+
+services:
+  LLM4LOG: 
+    image: vertextai:latest
+    container_name: llm4log
+    volumes:
+      - ./:/app
+    tty: true
+    command: "/bin/bash"
