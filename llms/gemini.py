@@ -1,3 +1,11 @@
+"""
+#gemini
+## maximum input size: 2M
+## maximum output token: 8192
+## Json response by: api
+"""
+
+
 import sys
 import os
 app_dir = sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))

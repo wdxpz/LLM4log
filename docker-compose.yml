@@ -3,7 +3,7 @@
 
 services:
   LLM4LOG: 
-    image: vertextai:latest
+    image: llm4log:latest
     container_name: llm4log
     volumes:
       - ./:/app

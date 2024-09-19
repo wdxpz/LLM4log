@@ -1,3 +1,9 @@
+"""
+#mistral large
+## refer api: https://docs.mistral.ai/api/#tag/chat/operation/chat_completion_v1_chat_completions_post
+## maximum input token:32768  #this may be caused by the version provided on google cloud, the official max context window should be 128k
+## Json response by: api
+"""
 import sys
 import os
 import json
@@ -39,15 +45,12 @@ def build_endpoint_url(
 project_id = config.project.PROJECT_ID
 region = config.mistral.LOCATION
 
-
 # Retrieve Google Cloud credentials.
 access_token = get_credentials()
-
 
 model = config.mistral.MODEL_ID
 model_version = config.mistral.MODEL_VERSION
 is_streamed = config.mistral.is_streamed # Change to True to stream token responses
-
 
 # Build URL
 url = build_endpoint_url(
@@ -57,7 +60,6 @@ url = build_endpoint_url(
     model_version=model_version,
     streaming=is_streamed
 )
-
 
 # Define query headers
 headers = {

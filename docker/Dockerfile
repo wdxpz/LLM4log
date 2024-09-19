@@ -1,3 +1,7 @@
 FROM google/cloud-sdk:latest
 
-RUN pip3 install --upgrade google-cloud-aiplatform anthropic[vertex]
+# set work directory
+WORKDIR /app
+COPY ./requirements.txt .
+
+RUN pip3 install -r requirements.txt 

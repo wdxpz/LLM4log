@@ -1,3 +1,11 @@
+"""
+#Claude 3 
+## only claude-3-opus@20240229 works
+##refer api: https://docs.anthropic.com/en/api/complete
+## maximum context window: 200k
+## maximum output :4096
+## Json response by: prompt
+"""
 import sys
 import os
 app_dir = sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -21,7 +29,7 @@ LOCATION = config.claude.LOCATION
 #     available_regions = ["us-east5", "europe-west1"]
 # elif MODEL == "claude-3-sonnet@20240229":
 #     available_regions = ["us-east5"]
-client = AnthropicVertex(region=LOCATION, project_id="log-analysis-433902")
+client = AnthropicVertex(region=LOCATION, project_id=project_id)
 
 def complete_claude(prompt):
   try:
@@ -48,7 +56,7 @@ def complete_claude(prompt):
       print(e.status_code)
       print(e.response)
 
-  print(message.model_dump_json(indent=2))
+  return message.model_dump_json(indent=2)
 
 if __name__ == '__main__':
   prompt = "Send me a recipe for banana bread."

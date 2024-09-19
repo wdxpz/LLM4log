@@ -16,15 +16,15 @@ gemini:
 llama:
   MODEL_ID : "meta/llama3-405b-instruct-maas"  # ["meta/llama3-8b-instruct-maas", "meta/llama3-70b-instruct-maas", "meta/llama3-405b-instruct-maas"]
   LOCATION : "us-central1"
-  apply_llama_guard : True  
+  apply_llama_guard : False  
   temperature : 0.2
-  max_tokens : 50  
+  max_tokens : 4096  
   top_p : 0.8 
   stream : False
 claude:
-  MODEL_ID : "claude-3-opus@20240229"  # ["claude-3-5-sonnet@20240620", "claude-3-opus@20240229", "claude-3-haiku@20240307", "claude-3-sonnet@20240229" ]
+  MODEL_ID : "claude-3-5-sonnet-20240620" #"claude-3-opus@20240229"  # ["claude-3-5-sonnet@20240620", "claude-3-opus@20240229", "claude-3-haiku@20240307", "claude-3-sonnet@20240229" ]
   LOCATION : "us-east5"
-  max_tokens: 1024
+  max_tokens: 4096
   temperature: 0.2
   top_p : 0.8
   top_k : 32

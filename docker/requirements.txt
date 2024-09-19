@@ -2,3 +2,4 @@ google-cloud-aiplatform
 anthropic[vertex]
 openai
 easydict
+loguru

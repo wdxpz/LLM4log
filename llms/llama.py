@@ -1,3 +1,11 @@
+"""
+#Llama 3 405b
+## refer api: https://platform.openai.com/docs/api-reference/chat/create
+## maximum context window: 128k
+## maximum output token: 4096? (if set to 8192 there will no response)
+## Json response by: prompt + specified json output via api(not guarantee the output schema) (Json schema only support by OpenAI's latest model) see: https://platform.openai.com/docs/guides/structured-outputs/introduction
+    * howto: https://platform.openai.com/docs/guides/structured-outputs/how-to-use
+"""
 import sys
 import os
 
@@ -6,6 +14,8 @@ from google.auth.transport.requests import Request
 import vertexai
 # Chat completions API
 import openai
+
+from example_prompt import ExtractResult
 
 
 
@@ -45,15 +55,16 @@ top_p = config.llama.top_p
 stream = config.llama.stream
 
 def complete_llama(prompt):
-    response = client.chat.completions.create(
+    response = client.beta.chat.completions.parse(  #client.chat.completions.create(
         model=MODEL_ID,
         messages=[
             {"role": "user", "content": f"{prompt}"},
         ],
+        response_format=ExtractResult,
         temperature=temperature,
         max_tokens=max_tokens,
         top_p=top_p,
-        stream=stream,
+        # stream=stream,
         extra_body={
             "extra_body": {
                 "google": {
@@ -66,7 +77,12 @@ def complete_llama(prompt):
         },
     )
 
-    print(response.choices[0].message.content)
+    if (response.refusal):
+        print(response.refusal)
+    else:
+        print(response.parsed)
+
+    return response.choices[0].message.content
 
 if __name__ == '__main__':
   prompt = """
