@@ -22,14 +22,14 @@ llama:
   top_p : 0.8 
   stream : False
 claude:
-  MODEL_ID : "claude-3-5-sonnet-20240620" #"claude-3-opus@20240229"  # ["claude-3-5-sonnet@20240620", "claude-3-opus@20240229", "claude-3-haiku@20240307", "claude-3-sonnet@20240229" ]
-  LOCATION : "us-east5"
+  MODEL_ID : "claude-3-5-sonnet@20240620" #"claude-3-opus@20240229"  # ["claude-3-5-sonnet@20240620", "claude-3-opus@20240229", "claude-3-haiku@20240307", "claude-3-sonnet@20240229" ]
+  LOCATION : "us-east5"  #"europe-west1"
   max_tokens: 4096
   temperature: 0.2
   top_p : 0.8
   top_k : 32
 mistral:
-  MODEL_ID : "mistral-large"  
+  MODEL_ID : "mistral-large-2"  
   MODEL_VERSION : "2407"
   is_streamed : False
   LOCATION : "us-central1"

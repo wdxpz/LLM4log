@@ -3,7 +3,7 @@
 ## refer api: https://platform.openai.com/docs/api-reference/chat/create
 ## maximum context window: 128k
 ## maximum output token: 4096? (if set to 8192 there will no response)
-## Json response by: prompt + specified json output via api(not guarantee the output schema) (Json schema only support by OpenAI's latest model) see: https://platform.openai.com/docs/guides/structured-outputs/introduction
+## Json response by: prompt + specified json output via api(not guarantee the output schema, only support OpenAI gpt models) (Json schema only support by OpenAI's latest model) see: https://platform.openai.com/docs/guides/structured-outputs/introduction
     * howto: https://platform.openai.com/docs/guides/structured-outputs/how-to-use
 """
 import sys
@@ -55,32 +55,43 @@ top_p = config.llama.top_p
 stream = config.llama.stream
 
 def complete_llama(prompt):
-    response = client.beta.chat.completions.parse(  #client.chat.completions.create(
-        model=MODEL_ID,
-        messages=[
-            {"role": "user", "content": f"{prompt}"},
-        ],
-        response_format=ExtractResult,
-        temperature=temperature,
-        max_tokens=max_tokens,
-        top_p=top_p,
-        # stream=stream,
-        extra_body={
-            "extra_body": {
-                "google": {
-                    "model_safety_settings": {
-                        "enabled": apply_llama_guard,
-                        "llama_guard_settings": {},
+    try:
+        response = client.chat.completions.create(  #client.beta.chat.completions.parse(
+            model=MODEL_ID,
+            messages=[
+                {"role": "user", "content": f"{prompt}"},
+            ],
+            # response_format={ "type":"json_object" },  #ExtractResult,
+            temperature=temperature,
+            max_tokens=max_tokens,
+            top_p=top_p,
+            # stream=stream,
+            extra_body={
+                "extra_body": {
+                    "google": {
+                        "model_safety_settings": {
+                            "enabled": apply_llama_guard,
+                            "llama_guard_settings": {},
+                        }
                     }
                 }
-            }
-        },
-    )
+            },
+        )
 
-    if (response.refusal):
-        print(response.refusal)
-    else:
-        print(response.parsed)
+        if (response.refusal):
+            print(response.refusal)
+        else:
+            print(response.parsed)
+    except Exception as e:
+        # Handle edge cases
+        if type(e) == openai.LengthFinishReasonError:
+            # Retry with a higher max tokens
+            print("Too many tokens: ", e)
+            return None
+        else:
+            # Handle other exceptions
+            print(e)
+            return None
 
     return response.choices[0].message.content
 
