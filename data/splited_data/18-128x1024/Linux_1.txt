@@ -271,7 +271,9 @@ Jul  1 05:02:26 combo sshd(pam_unix)[21692]: session opened for user test by (ui
 Jul  1 05:02:26 combo sshd(pam_unix)[21692]: session closed for user test
 Jul  1 05:02:27 combo sshd(pam_unix)[21693]: session opened for user test by (uid=509)
 Jul  1 05:02:27 combo sshd(pam_unix)[21693]: session closed for user test
-Jul  1 07:57:30 combo ftpd[21952]: connection from 202.82.200.188 () at Fri Jul  1 07:57:30 2005 
+ 203.101.45.59 (dsl-Chn-static-059.45.101.203.touchtelindia.net) at Sun Jul  3 10:05:25 2005 
+Jul  3 10:05:25 combo ftpd[32049]: connection from 203.101.45.59 (dsl-Chn-static-059.45.101.203.touchtelindia.net) at Sun Jul  3 10:05:25 2005 
+Jul  3 23:16:09 combo ftpd[768]: connectiJul  1 07:57:30 combo ftpd[21952]: connection from 202.82.200.188 () at Fri Jul  1 07:57:30 2005 
 Jul  1 07:57:30 combo ftpd[21951]: connection from 202.82.200.188 () at Fri Jul  1 07:57:30 2005 
 Jul  1 07:57:30 combo ftpd[21957]: connection from 202.82.200.188 () at Fri Jul  1 07:57:30 2005 
 Jul  1 07:57:30 combo ftpd[21953]: connection from 202.82.200.188 () at Fri Jul  1 07:57:30 2005 
@@ -382,9 +384,7 @@ Jul  3 10:05:25 combo ftpd[32052]: connection from 203.101.45.59 (dsl-Chn-static
 Jul  3 10:05:25 combo ftpd[32061]: connection from 203.101.45.59 (dsl-Chn-static-059.45.101.203.touchtelindia.net) at Sun Jul  3 10:05:25 2005 
 Jul  3 10:05:25 combo ftpd[32055]: connection from 203.101.45.59 (dsl-Chn-static-059.45.101.203.touchtelindia.net) at Sun Jul  3 10:05:25 2005 
 Jul  3 10:05:25 combo ftpd[32064]: connection from 203.101.45.59 (dsl-Chn-static-059.45.101.203.touchtelindia.net) at Sun Jul  3 10:05:25 2005 
-Jul  3 10:05:25 combo ftpd[32054]: connection from 203.101.45.59 (dsl-Chn-static-059.45.101.203.touchtelindia.net) at Sun Jul  3 10:05:25 2005 
-Jul  3 10:05:25 combo ftpd[32049]: connection from 203.101.45.59 (dsl-Chn-static-059.45.101.203.touchtelindia.net) at Sun Jul  3 10:05:25 2005 
-Jul  3 23:16:09 combo ftpd[768]: connection from 62.99.164.82 (62.99.164.82.sh.interxion.inode.at) at Sun Jul  3 23:16:09 2005 
+Jul  3 10:05:25 combo ftpd[32054]: connection fromon from 62.99.164.82 (62.99.164.82.sh.interxion.inode.at) at Sun Jul  3 23:16:09 2005 
 Jul  3 23:16:09 combo ftpd[772]: connection from 62.99.164.82 (62.99.164.82.sh.interxion.inode.at) at Sun Jul  3 23:16:09 2005 
 Jul  3 23:16:09 combo ftpd[769]: connection from 62.99.164.82 (62.99.164.82.sh.interxion.inode.at) at Sun Jul  3 23:16:09 2005 
 Jul  3 23:16:09 combo ftpd[767]: connection from 62.99.164.82 (62.99.164.82.sh.interxion.inode.at) at Sun Jul  3 23:16:09 2005 

@@ -46,13 +46,15 @@ from anthropic import AnthropicVertex
 
 
 
-from gemini import complete_gemini
-from claude import complete_claude
-from mistral import complete_mistral
-from llama import complete_llama
+from llms.gemini import complete_gemini
+from llms.claude import complete_claude
+from llms.mistral import complete_mistral
+from llms.llama import complete_llama
 from config.config import global_config
-from utils.utiles import file_chunks
-from example_prompt import context, response_schema, ExtractResult
+from task_extraction.utils.utiles import file_chunks
+from example_prompt import extraction_prompt_context as context
+from example_prompt import extraction_response_schema as response_schema
+from example_prompt import ExtractResult
 
 
 
@@ -141,5 +143,5 @@ def extraction_precison_and_recall(results, base_line_file):
     print(result_form)
 
 if COMPARE_RESULTS:
-    from Compare_Result import results
+    from extraction_result import results
     extraction_precison_and_recall(results, "/app/data/splited_data/18-128x1024/result_huaman_Linux_0.json")

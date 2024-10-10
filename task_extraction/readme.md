@@ -1,3 +1,6 @@
+**this directory includes works by Zhao QiMing**
+
+
 extract ip,url from server log with vertex ai : gemini-1.5-pro
 
 # environtment setup

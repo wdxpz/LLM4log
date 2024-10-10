@@ -1,3 +1,7 @@
+"""
+this file includes extraction results from data/splited_data/18-128*1024/Linux_0.txt by different LLMs
+"""
+
 import json
 # Compare Result:
 
