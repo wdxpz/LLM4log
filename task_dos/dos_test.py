@@ -14,11 +14,11 @@ from dos_prompt import Dos_Prompt_Context
 from llms.infer import llm_infer
 
 llm_model_names = ['gemini', 'claude', 'llama', 'mistral', 'mistral_s']
-result_form = pd.DataFrame(columns=['LLM Model', 'rougeL score'])
+result_form = pd.DataFrame(columns=['LLM Model', 'rouge1', 'rouge2', 'rougeL', 'rougeLsum'])
 
 #compute ROUGE score
-# rouge = evaluate.load('rouge')
-scorer = rouge_scorer.RougeScorer(['rougeLsum'], use_stemmer=True)
+rouge = evaluate.load('rouge')
+# scorer = rouge_scorer.RougeScorer(['rougeLsum'], use_stemmer=True)
 
 for llm_name in llm_model_names:
     model_outputs = []
@@ -30,11 +30,11 @@ for llm_name in llm_model_names:
         model_outputs.append(output.replace(' ', '').replace('\t', '').replace('\n', ''))
         baselines.append(baseline.replace(' ', '').replace('\t', '').replace('\n', ''))
 
-        prediction = '\n'.join(model_outputs)
-        target = '\n'.join(baselines)
+        # prediction = '\n'.join(model_outputs)
+        # target = '\n'.join(baselines)
+        # score =scorer.score(target, prediction)
+        score = rouge.compute(predictions=model_outputs, references=baselines)
 
-        score =scorer.score(target, prediction)
-
-        result_form.loc[len(result_form)] = [llm_name, f"{score:0.2f}"]
+        result_form.loc[len(result_form)] = [llm_name, f"{score['rouge1']:0.2f}", f"{score['rouge2']:0.2f}", f"{score['rougeL']:0.2f}", f"{score['rougeLsum']:0.2f}"]
 
 print(result_form)
