@@ -1,0 +1,34 @@
+2024-08-14 13:42:21.592 | INFO     | __main__:main:21 - Log file created at: result\result_2024-Aug-14-13-42-21\log_2024-Aug-14-13-42-21_64164.txt
+2024-08-14 13:42:21.593 | INFO     | __main__:main:22 - experiment comment:None
+2024-08-14 13:42:21.593 | INFO     | __main__:main:38 - Running in test mode
+2024-08-14 13:42:21.594 | INFO     | __main__:main:39 - loading results
+2024-08-14 13:42:21.594 | INFO     | __main__:main:43 - llm_result_file: result/result_2024-08-13_15-27-27/merged_output.json
+2024-08-14 13:42:21.594 | INFO     | __main__:main:44 - re_result_file: result/re_results/result-re.json
+2024-08-14 13:42:21.595 | INFO     | __main__:main:45 - human_result_file: result/human_evaluation.json
+2024-08-14 13:42:21.597 | INFO     | __main__:main:50 - human resut as standard
+2024-08-14 13:42:21.597 | INFO     | __main__:main:51 - num of ip in human result:352
+2024-08-14 13:42:21.598 | INFO     | __main__:main:52 - num of url in human result:241
+2024-08-14 13:42:21.600 | INFO     | __main__:main:58 - miss case between llm and human:57,55
+2024-08-14 13:42:21.602 | INFO     | __main__:main:67 - miss case between llm and re:62,75
+2024-08-14 13:42:21.603 | INFO     | __main__:main:77 - miss case between re and human:0,7
+2024-08-14 13:42:21.605 | INFO     | __main__:main:86 - miss case between re and llm: 98,17
+2024-08-14 13:42:21.607 | INFO     | __main__:main:96 - miss case between human and re: 8,23
+2024-08-14 13:42:21.608 | INFO     | __main__:main:105 - miss case between human and llm: 101,13
+2024-08-14 13:42:21.608 | INFO     | __main__:main:112 - exchange missed classify url and ip for result of llm
+2024-08-14 13:42:21.609 | INFO     | log_ex_RE:pure_llm:66 - nums of IP in URL:94
+2024-08-14 13:42:21.609 | INFO     | log_ex_RE:pure_llm:68 - nums of URL in IP:11
+2024-08-14 13:42:21.611 | INFO     | __main__:main:118 - num of ip in pure_llm_result:305
+2024-08-14 13:42:21.611 | INFO     | __main__:main:119 - num of url in pure_llm_result:219
+2024-08-14 13:42:21.612 | INFO     | __main__:main:126 - miss case between pure_llm and human:54,24
+2024-08-14 13:42:21.614 | INFO     | __main__:main:136 - miss case between pure_llm and re:59,44
+2024-08-14 13:42:21.616 | INFO     | __main__:main:146 - miss case between re and pure_llm: 4,6
+2024-08-14 13:42:21.618 | INFO     | __main__:main:156 - miss case between re and human: 0,7
+2024-08-14 13:42:21.620 | INFO     | __main__:main:167 - miss case between human and pure_llm: 7,2
+2024-08-14 13:42:21.621 | INFO     | __main__:main:176 - bad case between llm and human:101,13
+2024-08-14 13:42:21.623 | INFO     | __main__:main:185 - bad case between pure_llm and human:7,2
+2024-08-14 13:42:21.623 | INFO     | __main__:main:194 - recall of llm(0.8380681818181818, 0.7717842323651453)
+2024-08-14 13:42:21.624 | INFO     | __main__:main:195 - recall of pure_llm(0.8465909090909091, 0.9004149377593361)
+2024-08-14 13:42:21.624 | INFO     | __main__:main:198 - recall of re(1.0, 0.970954356846473)
+2024-08-14 13:42:21.624 | INFO     | __main__:main:200 - precision of llm(0.7449494949494949, 0.9346733668341709)
+2024-08-14 13:42:21.625 | INFO     | __main__:main:201 - precision of pure_llm(0.9770491803278688, 0.9908675799086758)
+2024-08-14 13:42:21.625 | INFO     | __main__:main:202 - precision of re(0.9777777777777777, 0.9105058365758755)

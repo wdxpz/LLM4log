@@ -1,0 +1,20 @@
+dataset:
+  log_file: data/Linux.txt
+exp_dir: result
+exp_name: result_2024-Aug-14-15-17-22
+exp_time: 2024-Aug-14-15-17-22
+inference:
+  chunk_size: 728*728
+  save_path: result
+model:
+  LOCATION: us-central1
+  MODEL_NAME: gemini-1.5-pro
+  PROJECT_ID: log-extraction
+  temperature: 0
+  top_p: 0.8
+run_id: '90048'
+save_dir: result\result_2024-Aug-14-15-17-22
+test:
+  human_result_file: result/human_evaluation.json
+  llm_result_file: result/result_2024-08-14_14-27-00/merged_output.json
+  re_result_file: result/re_results/result-re.json

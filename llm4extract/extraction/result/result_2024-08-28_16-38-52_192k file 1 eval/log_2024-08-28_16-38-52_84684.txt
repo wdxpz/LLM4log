@@ -1,0 +1,41 @@
+2024-08-28 16:38:52.512 | INFO     | __main__:main:33 - Log file created at: result\result_2024-08-28_16-38-52_\log_2024-08-28_16-38-52_84684.txt
+2024-08-28 16:38:52.512 | INFO     | __main__:main:34 - experiment comment:None
+2024-08-28 16:38:52.512 | INFO     | __main__:main:40 - RUN_ID: 84684
+2024-08-28 16:38:52.512 | INFO     | utils.re_extract:evaluate_result:109 - Running in test mode
+2024-08-28 16:38:52.512 | INFO     | utils.re_extract:evaluate_result:110 - loading results
+2024-08-28 16:38:52.518 | INFO     | utils.re_extract:evaluate_result:114 - llm_result_file: result/result_2024-08-28_16-32-16_/inference_output/output0.json
+2024-08-28 16:38:52.518 | INFO     | utils.re_extract:evaluate_result:115 - re_result_file: data/splited data/12-192x1024/result_re_Linux_1.json
+2024-08-28 16:38:52.518 | INFO     | utils.re_extract:evaluate_result:116 - human_result_file: data/splited data/12-192x1024/result_human_Linux_1.json
+2024-08-28 16:38:52.518 | INFO     | utils.re_extract:evaluate_result:121 - human resut as standard
+2024-08-28 16:38:52.518 | INFO     | utils.re_extract:evaluate_result:122 - num of ip in human result:82
+2024-08-28 16:38:52.518 | INFO     | utils.re_extract:evaluate_result:123 - num of url in human result:26
+2024-08-28 16:38:52.518 | INFO     | utils.re_extract:evaluate_result:124 - num of ip in llm result:82
+2024-08-28 16:38:52.518 | INFO     | utils.re_extract:evaluate_result:125 - num of url in llm result:15
+2024-08-28 16:38:52.518 | INFO     | utils.re_extract:evaluate_result:128 - --------------------------------------------------------------------------------
+2024-08-28 16:38:52.526 | INFO     | utils.re_extract:evaluate_result:134 - miss case between llm and human:7,12
+2024-08-28 16:38:52.526 | INFO     | utils.re_extract:evaluate_result:143 - miss case between llm and re:8,23
+2024-08-28 16:38:52.526 | INFO     | utils.re_extract:evaluate_result:154 - miss case between re and human:0,3
+2024-08-28 16:38:52.526 | INFO     | utils.re_extract:evaluate_result:159 - --------------------------------------------------------------------------------
+2024-08-28 16:38:52.526 | INFO     | utils.re_extract:evaluate_result:162 - exchange missed classify url and ip for result of llm to get pure llm result
+2024-08-28 16:38:52.526 | INFO     | utils.re_extract:pure_llm:75 - nums of URL in IP:9
+2024-08-28 16:38:52.526 | INFO     | utils.re_extract:pure_llm:77 - nums of IP in URL:0
+2024-08-28 16:38:52.526 | INFO     | utils.re_extract:pure_llm:80 - nums of pure IP:73
+2024-08-28 16:38:52.526 | INFO     | utils.re_extract:pure_llm:81 - nums of pure URL:15
+2024-08-28 16:38:52.534 | INFO     | utils.re_extract:pure_llm:84 - nums of pure IP after exchange:73
+2024-08-28 16:38:52.534 | INFO     | utils.re_extract:pure_llm:85 - nums of pure URL after exchange:23
+2024-08-28 16:38:52.534 | INFO     | utils.re_extract:evaluate_result:168 - num of ip in pure_llm_result:73
+2024-08-28 16:38:52.534 | INFO     | utils.re_extract:evaluate_result:171 - num of url in pure_llm_result:23
+2024-08-28 16:38:52.534 | INFO     | utils.re_extract:evaluate_result:174 - --------------------------------------------------------------------------------
+2024-08-28 16:38:52.534 | INFO     | utils.re_extract:evaluate_result:181 - miss case between pure_llm and human:7,4
+2024-08-28 16:38:52.542 | INFO     | utils.re_extract:evaluate_result:192 - miss case between pure_llm and re:8,15
+2024-08-28 16:38:52.542 | INFO     | utils.re_extract:evaluate_result:203 - miss case between re and human: 0,3
+2024-08-28 16:38:52.542 | INFO     | utils.re_extract:evaluate_result:209 - --------------------------------------------------------------------------------
+2024-08-28 16:38:52.542 | INFO     | utils.re_extract:evaluate_result:215 - bad case between llm and human:10,1
+2024-08-28 16:38:52.542 | INFO     | utils.re_extract:evaluate_result:226 - bad case between pure_llm and human:1,1
+2024-08-28 16:38:52.542 | INFO     | utils.re_extract:evaluate_result:231 - --------------------------------------------------------------------------------
+2024-08-28 16:38:52.542 | INFO     | utils.re_extract:evaluate_result:234 - recall of llm(0.9113924050632911, 0.5384615384615384)
+2024-08-28 16:38:52.550 | INFO     | utils.re_extract:evaluate_result:235 - recall of pure_llm(0.9113924050632911, 0.8461538461538461)
+2024-08-28 16:38:52.550 | INFO     | utils.re_extract:evaluate_result:238 - recall of re(1.0, 0.8846153846153846)
+2024-08-28 16:38:52.550 | INFO     | utils.re_extract:evaluate_result:240 - precision of llm(0.8780487804878049, 0.9333333333333333)
+2024-08-28 16:38:52.550 | INFO     | utils.re_extract:evaluate_result:243 - precision of pure_llm(0.9863013698630136, 0.9565217391304348)
+2024-08-28 16:38:52.550 | INFO     | utils.re_extract:evaluate_result:248 - precision of re(0.9753086419753086, 0.6388888888888888)

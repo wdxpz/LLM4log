@@ -1,0 +1,35 @@
+2024-08-14 15:17:22.738 | INFO     | __main__:main:34 - Log file created at: result\result_2024-Aug-14-15-17-22\log_2024-Aug-14-15-17-22_90048.txt
+2024-08-14 15:17:22.739 | INFO     | __main__:main:35 - experiment comment:None
+2024-08-14 15:17:22.739 | INFO     | __main__:main:41 - RUN_ID: 90048
+2024-08-14 15:17:22.740 | INFO     | log_ex_RE:evaluate_result:96 - Running in test mode
+2024-08-14 15:17:22.741 | INFO     | log_ex_RE:evaluate_result:97 - loading results
+2024-08-14 15:17:22.741 | INFO     | log_ex_RE:evaluate_result:101 - llm_result_file: result/result_2024-08-14_14-27-00/merged_output.json
+2024-08-14 15:17:22.742 | INFO     | log_ex_RE:evaluate_result:102 - re_result_file: result/re_results/result-re.json
+2024-08-14 15:17:22.742 | INFO     | log_ex_RE:evaluate_result:103 - human_result_file: result/human_evaluation.json
+2024-08-14 15:17:22.746 | INFO     | log_ex_RE:evaluate_result:108 - human resut as standard
+2024-08-14 15:17:22.746 | INFO     | log_ex_RE:evaluate_result:109 - num of ip in human result:352
+2024-08-14 15:17:22.746 | INFO     | log_ex_RE:evaluate_result:110 - num of url in human result:241
+2024-08-14 15:17:22.748 | INFO     | log_ex_RE:evaluate_result:117 - miss case between llm and human:87,50
+2024-08-14 15:17:22.750 | INFO     | log_ex_RE:evaluate_result:126 - miss case between llm and re:93,70
+2024-08-14 15:17:22.751 | INFO     | log_ex_RE:evaluate_result:136 - miss case between re and human:0,7
+2024-08-14 15:17:22.753 | INFO     | log_ex_RE:evaluate_result:145 - miss case between re and llm: 103,44
+2024-08-14 15:17:22.754 | INFO     | log_ex_RE:evaluate_result:155 - miss case between human and re: 8,23
+2024-08-14 15:17:22.757 | INFO     | log_ex_RE:evaluate_result:165 - miss case between human and llm: 105,40
+2024-08-14 15:17:22.757 | INFO     | log_ex_RE:evaluate_result:172 - exchange missed classify url and ip for result of llm
+2024-08-14 15:17:22.758 | INFO     | log_ex_RE:pure_llm:66 - nums of IP in URL:97
+2024-08-14 15:17:22.758 | INFO     | log_ex_RE:pure_llm:68 - nums of URL in IP:35
+2024-08-14 15:17:22.760 | INFO     | log_ex_RE:evaluate_result:178 - num of ip in pure_llm_result:286
+2024-08-14 15:17:22.760 | INFO     | log_ex_RE:evaluate_result:181 - num of url in pure_llm_result:217
+2024-08-14 15:17:22.763 | INFO     | log_ex_RE:evaluate_result:190 - miss case between pure_llm and human:74,29
+2024-08-14 15:17:22.764 | INFO     | log_ex_RE:evaluate_result:201 - miss case between pure_llm and re:80,49
+2024-08-14 15:17:22.766 | INFO     | log_ex_RE:evaluate_result:212 - miss case between re and pure_llm: 6,9
+2024-08-14 15:17:22.767 | INFO     | log_ex_RE:evaluate_result:222 - miss case between re and human: 0,7
+2024-08-14 15:17:22.768 | INFO     | log_ex_RE:evaluate_result:233 - miss case between human and pure_llm: 8,5
+2024-08-14 15:17:22.770 | INFO     | log_ex_RE:evaluate_result:244 - bad case between llm and human:105,40
+2024-08-14 15:17:22.772 | INFO     | log_ex_RE:evaluate_result:255 - bad case between pure_llm and human:8,5
+2024-08-14 15:17:22.772 | INFO     | log_ex_RE:evaluate_result:263 - recall of llm(0.7528409090909091, 0.7925311203319502)
+2024-08-14 15:17:22.773 | INFO     | log_ex_RE:evaluate_result:264 - recall of pure_llm(0.7897727272727273, 0.8796680497925311)
+2024-08-14 15:17:22.773 | INFO     | log_ex_RE:evaluate_result:267 - recall of re(1.0, 0.970954356846473)
+2024-08-14 15:17:22.774 | INFO     | log_ex_RE:evaluate_result:269 - precision of llm(0.7162162162162162, 0.8268398268398268)
+2024-08-14 15:17:22.774 | INFO     | log_ex_RE:evaluate_result:272 - precision of pure_llm(0.972027972027972, 0.9769585253456221)
+2024-08-14 15:17:22.775 | INFO     | log_ex_RE:evaluate_result:277 - precision of re(0.9777777777777777, 0.9105058365758755)
