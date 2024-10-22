@@ -5,7 +5,7 @@ from huggingface_hub import login
 import evaluate
 from rouge_score import rouge_scorer, scoring
 
-hf_access_token = "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"
+# hf_access_token = ""
 # login(token=hf_access_token, add_to_git_credential=True)
 
 model_name = 'mistralai/Mistral-Small-Instruct-2409'
