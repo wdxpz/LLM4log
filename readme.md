@@ -182,7 +182,26 @@ files to do dos attack analysis by llm
   **just finished codes, not tested yet**
 
 ## llm4extract
-files to do extraction of entity(IP/URL) and entity appearence times, please find detailed description in [extraction readme](llm4extract/extraction/readme.md)
+entity extraction experiments
+### comparision
+comparision of different LLM models' behaviour on entity extraction
+* `config.py`: load config parameters for different LLM models
+* `example_prompt.py`: the designed prompt for LLM model to follow and output extracted entity in Json format
+* `extraction_result.py`: the generated results of different LLM models on 1st chunk of `Linux.txt` via. google cloud vertax ai
+
+the comparision result shows gemini pro 1.5 currently make the best behaviour on entity (IP/URL) extration, here is the experiment results:
+```
+extraction result on 1st 128k chunk:
+                    LLM Model IP precesion IP recall URL precision URL recall
+0              gemini_pro_1_5         0.96      0.94          0.94       0.85
+1  claude_3_5_sonnet_20240620         0.64      0.19          0.50       0.35
+2      claude_3_opus_20240229         0.87      0.96          0.67       0.70
+3              llama_3_1_405B         0.74      0.36          0.75       0.45
+4               mistral_large         1.00      0.53          1.00       0.10
+```
+
+### extraction
+extraction of entity(IP/URL) and entity appearence times by Gemini 1.5 pro, please find detailed description in [extraction readme](llm4extract/extraction/readme.md)
 
 ## llms
   * `infer.py`: an encapusulated interface `llm_infer` to call a specific llm model for inference
